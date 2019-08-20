@@ -1,0 +1,12 @@
+# This file is used to encrypt/decrypt select files in the grading directory.
+# see https://github.com/AGWA/git-crypt
+
+# The .gitattributes file is documented in the gitattributes(5) man page.
+# The file pattern format is the same as the one used by .gitignore,
+# as documented in the gitignore(5) man page, with the exception that
+# specifying merely a directory (e.g. /dir/) is not sufficient to
+# encrypt all files beneath it.
+# Also note that the pattern dir/* does not match files under sub-directories of dir/.
+
+solution.py filter=git-crypt diff=git-crypt
+tests/fixtures/grading.py filter=git-crypt diff=git-crypt

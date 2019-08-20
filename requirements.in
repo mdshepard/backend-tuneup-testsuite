@@ -1,0 +1,9 @@
+faker
+flake8
+ipython
+pathlib
+pip-tools
+pytest
+pytest-html
+tox
+tox-pyenv

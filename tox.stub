@@ -1,0 +1,15 @@
+[tox]
+envlist = py27,py30,py31,py32,py33,py34,py35,py36,py37
+skipsdist=True
+
+[testenv]
+deps = -r grading/requirements.in
+setenv =
+  KENZIE_KPA = True
+  KENZIE_KPA_PYTEST = --tb=short --show-capture=no
+    --html=./grading/reports/{env:TOX_ENV_NAME}-report.html
+    --junitxml=./grading/reports/{env:TOX_ENV_NAME}-report.xml
+  KENZIE_KPA_TESTSUITE = ./grading/tests/test_backend_tuneup.py::TestAssignment
+  KENZIE_KPA_CMD = {env:KENZIE_KPA_PYTEST} {env:KENZIE_KPA_TESTSUITE}
+commands =
+  pytest {env:KENZIE_KPA_CMD}
